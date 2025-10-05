@@ -4,6 +4,6 @@ import com.example.demo.entity.Review;
 
 public interface ReviewDeleteService {
 	
-	void remove(Review review);
+	void delete(Review review);
 
 }
