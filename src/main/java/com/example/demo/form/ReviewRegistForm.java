@@ -15,7 +15,6 @@ public class ReviewRegistForm {
 	@NotNull(message="Please enter a value")
 	@Min(value=1, message="Please enter a positive integer.")
 	private int restaurantId;
-	
 	private String restaurantName;
 	
 	@Size(min=4, max=16, message="Please enter between 4 and 16 characters.")
