@@ -100,7 +100,7 @@ public class ReviewRepositoryImpl implements ReviewRepository {
 
 
 	@Override
-	public void delete(Review review) {
+	public void remove(Review review) {
 		
 		String sql = 
 				"DELETE       " +
