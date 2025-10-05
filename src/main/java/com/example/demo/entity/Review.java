@@ -7,11 +7,11 @@ import lombok.Data;
 @Data
 public class Review {
 	
-	private Integer reviewId; 
-	private Integer restaurantId;
+	private int reviewId; 
+	private int restaurantId;
 	private String userId;
 	private Date visitDate;
-	private Integer rating;
+	private int rating;
 	private String comment;
 
 }
