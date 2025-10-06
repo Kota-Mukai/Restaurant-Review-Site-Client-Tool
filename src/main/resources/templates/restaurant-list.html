@@ -13,13 +13,13 @@
 	【Restaurant Name】（partial match）<br>
    	<input type="text" th:field="*{restaurantName}"><br>
 	<br>
-   	<input type="submit" value="Search" class="btn">
+   	<input type="submit" value="Search" class="button">
 </form>
 
 <div th:if="${restaurantList} != null">
 	<h2>Search result</h2>
 
-	<table class="restaurant-list">
+	<table>
 		<tr>
 			<th colspan="2">Review</th><th>Restaurant ID</th><th>Restaurant name</th><th>Tagline</th><th>Average rating</th>
 		</tr>
@@ -29,14 +29,14 @@
 				<form th:action="@{/search-review}" method="POST">
 					<input type="hidden" name="restaurantId" th:value="${restaurant.restaurantId}">
 					<input type="hidden" name="restaurantName" th:value="${restaurant.restaurantName}">
-					<input type="submit" value="List" class="tbtn">
+					<input type="submit" value="List" class="button">
 				</form>
 			</td>			
 			<td>
 				<form th:action="@{/show-review-form}" method="POST">
 					<input type="hidden" name="restaurantId" th:value="${restaurant.restaurantId}">
 					<input type="hidden" name="restaurantName" th:value="${restaurant.restaurantName}">
-					<input type="submit" value="Regist" class="tbtn">
+					<input type="submit" value="Regist" class="button">
 				</form>
 			</td>
 			<td th:text="${restaurant.restaurantId}"></td>

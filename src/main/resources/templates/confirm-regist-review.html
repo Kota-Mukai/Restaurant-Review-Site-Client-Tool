@@ -9,7 +9,7 @@
 		
 	<h2>Confirm regist review</h2>
 
-	<table class="confirm-table" th:object="${reviewRegistForm}">
+	<table th:object="${reviewRegistForm}">
 		<tr>
 			<td class="guide">【Restaurant】</td>
 			<td th:text="*{restaurantId} + ' ' + *{restaurantName}"></td>
@@ -40,7 +40,7 @@
     	<input type="hidden" th:field="*{visitDate}">
     	<input type="hidden" th:field="*{rating}">
     	<input type="hidden" th:field="*{comment}">
-    	<input type="submit" value="Regist" class="btn">
+    	<input type="submit" value="Regist" class="button">
    	</form>
 
     <form th:action="@{/show-review-form-ret}" method="POST"
@@ -50,8 +50,8 @@
     	<input type="hidden" th:field="*{userId}">
     	<input type="hidden" th:field="*{visitDate}">
     	<input type="hidden" th:field="*{rating}">
-    	<input type="hidden" th:field="*{comment}" class="btn">
-    	<input type="submit" value="Back" class="btn">
+    	<input type="hidden" th:field="*{comment}">
+    	<input type="submit" value="Back" class="button">
    	</form>
 
 </body>

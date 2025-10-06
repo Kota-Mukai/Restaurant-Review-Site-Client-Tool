@@ -20,7 +20,7 @@
 （No reviews available）
 </div>
 <div th:if="${reviewList} != null">
-	<table class="review-list">
+	<table>
 		<tr>
 			<th colspan="2">Review</th><th>ID</th><th>User</th><th>Visit date</th><th>Rating</th><th>Comment</th>
 		</tr>
@@ -36,7 +36,7 @@
 					<input type="hidden" name="visitDate"  th:value="${review.visitDate}">
 					<input type="hidden" name="rating"  th:value="${review.rating}">
 					<input type="hidden" name="comment"  th:value="${review.comment}">
-					<input type="submit" value="Edit"  class="tbtn">
+					<input type="submit" value="Edit"  class="button">
 				</form>
 			</td>
 			<td>
@@ -48,7 +48,7 @@
 					<input type="hidden" name="visitDate"  th:value="${review.visitDate}">
 					<input type="hidden" name="rating"  th:value="${review.rating}">
 					<input type="hidden" name="comment"  th:value="${review.comment}">
-					<input type="submit" value="Delete"  class="tbtn">
+					<input type="submit" value="Delete"  class="button">
 				</form>
 			</td>
 			<td th:text="${review.reviewId}"></td>
@@ -62,7 +62,7 @@
 </div>
 
 <br>
-<a th:href="@{/top}">Back to top page</a>
+<a class="return"  th:href="@{/top}">Back to top page</a>
 
 </body>
 </html>

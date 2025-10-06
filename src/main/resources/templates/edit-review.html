@@ -45,17 +45,17 @@
     	<input type="text" th:field="*{comment}" class="comment" ><br>
     	<div th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}" class="error-msg"></div>
 		<br>
-    	<input type="submit" value="Edit" class="btn">
+    	<input type="submit" value="Edit" class="button">
     </form>
 	
 	<form th:action="@{/search-review}" method="POST"
 	        th:object="${reviewEditForm}">
 		<input type="hidden" th:field="*{restaurantId}">
 		<input type="hidden" th:field="*{restaurantName}">
-		<input type="submit" value="Back" class="btn">
+		<input type="submit" value="Back" class="button">
 	</form><br>
 
-	<a th:href="@{/top}">Back to top page</a>
+	<a class="return" th:href="@{/top}">Back to top page</a>
 
 </body>
 </html>
