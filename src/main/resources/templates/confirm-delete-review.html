@@ -9,7 +9,7 @@
 		
 	<h2>Confirm delete review</h2>
 
-	<table class="confirm-table" th:object="${reviewDeleteForm}">
+	<table th:object="${reviewDeleteForm}">
 		<tr>
 			<td class="guide">【ID】</td>
 			<td th:text="*{reviewId}"></td>
@@ -45,14 +45,14 @@
     	<input type="hidden" th:field="*{visitDate}">
     	<input type="hidden" th:field="*{rating}">
     	<input type="hidden" th:field="*{comment}">
-    	<input type="submit" value="Delete" class="btn">
+    	<input type="submit" value="Delete" class="button">
    	</form>
 
     <form th:action="@{/search-review}" method="POST"
 			th:object="${reviewDeleteForm}">
     	<input type="hidden" th:field="*{restaurantId}">
 		<input type="hidden" th:field="*{restaurantName}">
-    	<input type="submit" value="Back" class="btn">
+    	<input type="submit" value="Back" class="button">
    	</form>
 
 </body>

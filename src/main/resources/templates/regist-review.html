@@ -40,11 +40,11 @@
     	<input type="text" th:field="*{comment}" class="comment" ><br>
     	<div th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}" class="error-msg"></div>
 		<br>
-    	<input type="submit" value="Regist" class="btn">
+    	<input type="submit" value="Regist" class="button">
     </form>
 	
 	<br>
-	<a th:href="@{/top}">Back to top page</a>
+	<a class="return" th:href="@{/top}">Back to top page</a>
 
 </body>
 </html>

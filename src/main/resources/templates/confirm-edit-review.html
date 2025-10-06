@@ -9,7 +9,7 @@
 		
 	<h2>Confirm edit review</h2>
 
-	<table class="confirm-table" th:object="${reviewEditForm}">
+	<table th:object="${reviewEditForm}">
 		<tr>
 			<td class="guide">【ID】</td>
 			<td th:text="*{reviewId}"></td>
@@ -45,7 +45,7 @@
     	<input type="hidden" th:field="*{visitDate}">
     	<input type="hidden" th:field="*{rating}">
     	<input type="hidden" th:field="*{comment}">
-    	<input type="submit" value="Edit" class="btn">
+    	<input type="submit" value="Edit" class="button">
    	</form>
 
     <form th:action="@{/show-edit-form}" method="POST"
@@ -57,7 +57,7 @@
     	<input type="hidden" th:field="*{visitDate}">
     	<input type="hidden" th:field="*{rating}">
     	<input type="hidden" th:field="*{comment}" class="btn">
-    	<input type="submit" value="Back" class="btn">
+    	<input type="submit" value="Back" class="button">
    	</form>
 
 </body>
