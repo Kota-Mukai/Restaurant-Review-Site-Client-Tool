@@ -1,6 +1,5 @@
-# Restaurant review site admin tool
-"Restaurant review site admin tool" is an administrative system that allows administrators to register, edit, and delete restaurants on the restaurant review site, as well as search for restaurants within the site.  
-You can find the client-side application in my repository under Restaurant-Review-Site-Client-Tool.
+# Restaurant review site client tool
+"Restaurant review site client tool" implements CRUD operations that allow you to search for restaurants registered on the site, check their names, tagline and average review scores, and add, edit, or delete reviews. If you want to create, view, edit, or delete restaurant entries, please refer to the "Restaurant-Review-Site-Admin-Tool" repository on my page.
 
 # Purpose of creating this tool
 To produce an output as part of learning web application development using Spring Boot.
