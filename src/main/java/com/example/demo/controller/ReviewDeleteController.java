@@ -19,26 +19,26 @@ public class ReviewDeleteController {
 	
 	private final ReviewDeleteService service;
 	
-	@PostMapping("/remove-review")
-	public String removeReview(
+	@PostMapping("/delete-review")
+	public String deleteReview(
 			@Validated @ModelAttribute ReviewDeleteForm form,
 			BindingResult result) {
 		
 		if(result.hasErrors()) {
-			throw new IllegalArgumentException("**removeReview()**");
+			throw new IllegalArgumentException("**deleteReview()**");
 		}
 		
-		return "confirm-remove-review";
+		return "confirm-delete-review";
 	}
 	
-	@PostMapping("/confirm-remove-review")
-	public String confirmRemoveReview(
+	@PostMapping("/confirm-delete-review")
+	public String confirmDeleteReview(
 			@Validated ReviewDeleteForm form,
 			BindingResult result,
 			RedirectAttributes redirectAttributes) {
 		
 		if(result.hasErrors()) {
-			throw new IllegalArgumentException("**confirmRemoveReview()**");
+			throw new IllegalArgumentException("**confirmDeleteReview()**");
 		}
 		
 		Review r = new Review();

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Confirm delete review</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+		
+	<h2>Confirm delete review</h2>
+
+	<table class="confirm-table" th:object="${reviewDeleteForm}">
+		<tr>
+			<td class="guide">【ID】</td>
+			<td th:text="*{reviewId}"></td>
+		</tr>
+		<tr>
+			<td class="guide">【Restaurant】</td>
+			<td th:text="*{restaurantId} + ' ' + *{restaurantName}"></td>
+		</tr>
+		<tr>
+			<td class="guide">【User ID】</td>
+			<td th:text="*{userId}"></td>
+		</tr>
+		<tr>
+			<td class="guide">【Visit date】</td>
+			<td th:text="*{visitDate}"></td>
+		</tr>
+		<tr>
+			<td class="guide">【Rating（1-5）】</td>
+			<td th:text="*{rating}"></td>
+		</tr>
+		<tr>
+			<td class="guide">【Comment】</td>
+			<td th:text="*{comment}"></td>
+		</tr>
+		
+	</table>
+
+    <form th:action="@{/confirm-delete-review}" method="POST"
+			th:object="${reviewDeleteForm}">
+		<input type="hidden" th:field="*{reviewId}">
+    	<input type="hidden" th:field="*{restaurantId}">
+    	<input type="hidden" th:field="*{userId}">
+    	<input type="hidden" th:field="*{visitDate}">
+    	<input type="hidden" th:field="*{rating}">
+    	<input type="hidden" th:field="*{comment}">
+    	<input type="submit" value="Delete" class="btn">
+   	</form>
+
+    <form th:action="@{/search-review}" method="POST"
+			th:object="${reviewDeleteForm}">
+    	<input type="hidden" th:field="*{restaurantId}">
+		<input type="hidden" th:field="*{restaurantName}">
+    	<input type="submit" value="Back" class="btn">
+   	</form>
+
+</body>
+</html>
