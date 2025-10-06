@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Search restaurant</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<h2>Search Restaurant</h2>
+<form th:action="@{/restaurant-search}" method="POST" th:object="${restaurantSearchForm}">
+	【Restaurant Name】（partial match）<br>
+   	<input type="text" th:field="*{restaurantName}"><br>
+	<br>
+   	<input type="submit" value="Search" class="btn">
+</form>
+
+<div th:if="${restaurantList} != null">
+	<h2>Search result</h2>
+
+	<table class="restaurant-list">
+		<tr>
+			<th colspan="2">Review</th><th>Restaurant ID</th><th>Restaurant name</th><th>Tagline</th><th>Average rating</th>
+		</tr>
+
+		<tr th:each="restaurant : ${restaurantList}">
+			<td>
+				<form th:action="@{/search-review}" method="POST">
+					<input type="hidden" name="restaurantId" th:value="${restaurant.restaurantId}">
+					<input type="hidden" name="restaurantName" th:value="${restaurant.restaurantName}">
+					<input type="submit" value="List" class="tbtn">
+				</form>
+			</td>			
+			<td>
+				<form th:action="@{/show-review-form}" method="POST">
+					<input type="hidden" name="restaurantId" th:value="${restaurant.restaurantId}">
+					<input type="hidden" name="restaurantName" th:value="${restaurant.restaurantName}">
+					<input type="submit" value="Regist" class="tbtn">
+				</form>
+			</td>
+			<td th:text="${restaurant.restaurantId}"></td>
+			<td th:text="${restaurant.restaurantName}"></td>
+			<td th:text="${restaurant.tagline}"></td>
+			<td th:text="${restaurant.formatAverageRating()}"></td>
+		</tr>
+
+	</table>
+
+</div>
+
+</body>
+</html>
