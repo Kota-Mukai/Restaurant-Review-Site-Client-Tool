@@ -16,8 +16,8 @@
 		<input type="hidden" th:field="*{reviewId}">
 		<div th:if="${#fields.hasErrors('reviewId')}" th:errors="*{reviewId}" class="error-msg"></div>
 		<br>
-		【Restaurant ID】<br>
-		<p th:text="*{restaurantId}+' '+ *{restaurantName}"></p>
+		【Restaurant】<br>
+		<p th:text="*{restaurantName}"></p>
 		<input type="hidden" th:field="*{restaurantId}">
 		<input type="hidden" th:field="*{restaurantName}">
     	<div th:if="${#fields.hasErrors('restaurantId')}" th:errors="*{restaurantId}" class="error-msg"></div>

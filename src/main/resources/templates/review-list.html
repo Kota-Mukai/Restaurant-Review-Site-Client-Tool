@@ -9,10 +9,9 @@
 
 <h2>Review list</h2>
 
-<div th:object="${reviewSearchForm}">
+<div th:object="${reviewListForm}">
 【Restaurant name】<br>
-<p th:text="*{restaurantId}
-               + ' ' + *{restaurantName}"></p>
+<p th:text="*{restaurantName}"></p>
 </div>
 
 <br>
